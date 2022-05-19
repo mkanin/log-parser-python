@@ -1,0 +1,14 @@
+version: '3.1'
+# run docker-compose up to start
+
+services:
+  db:
+    image: mysql:8.0.27
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: test_db
+    ports:
+      - "3307:3306"
+    volumes:
+      - $HOME/docker/mysql/logparser.sql:/logparser.sql
